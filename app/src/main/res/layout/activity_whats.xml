@@ -1,0 +1,114 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CameraActivity" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/btn_shutter"
+        android:layout_alignParentStart="true">
+        <com.happen.it.make.whatisit.CameraSurfaceView
+            android:id="@+id/camera_surfaceview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone"/>
+        <com.happen.it.make.whatisit.MaskView
+            android:id="@+id/view_mask"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/share">
+
+            <ImageView
+                android:id="@+id/result_Image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:id="@+id/result_text"
+                android:layout_width="369dp"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/material_blue_grey_800"
+                android:textSize="40dp"
+                android:layout_below="@+id/result_Image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+
+    <ImageView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="50.0dip"
+        android:src="@drawable/logo"
+        android:layout_marginEnd="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/btn_shutter" />
+
+    <ImageView
+        android:id="@+id/share"
+        android:layout_width="50.0dip"
+        android:layout_height="50.0dip"
+        android:layout_marginRight="5.0dip"
+        android:padding="15.0dip"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_share_2"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/history" />
+    <ImageButton
+        android:id="@+id/btn_shutter"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:background="@drawable/btn_shutter_background" />
+    <ImageButton
+        android:id="@+id/gallery"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:scaleType="center"
+        android:src="@drawable/gallery"
+        android:layout_marginLeft="19dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+    <ImageView
+        android:id="@+id/history"
+        android:layout_width="60sp"
+        android:layout_height="45sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:padding="25.0dip"
+        android:scaleType="center"
+        android:src="@drawable/history_2"
+        android:layout_alignTop="@+id/btn_shutter" />
+
+    <Button
+        android:id="@+id/identify_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始识别"
+        android:visibility="visible"
+        android:layout_alignBottom="@+id/about"
+        android:layout_toEndOf="@+id/about" />
+</RelativeLayout>
